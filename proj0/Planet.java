@@ -30,11 +30,19 @@ public class Planet {
 		double ForceExertedBy = G * mass * obj.mass / (r * r);
 		return ForceExertedBy;
 	}
+	public double calcForceExertedByX(Planet obj) {
+		double ForceExertedByX = calcForceExertedBy(obj) * (obj.xxPos - xxPos) / calcDistance(obj);
+		return ForceExertedByX;
+	}
+	public double calcForceExertedByY(Planet obj) {
+		double ForceExertedByY = calcForceExertedBy(obj) * (obj.yyPos - yyPos) / calcDistance(obj);
+		return ForceExertedByY;
+	}
 	public double calcNetForceExertedByX(Planet [] allPlanets) {
 		double NetForceExertedByX = 0;
 		for (int i = 0; i < allPlanets.length; i++) {
 		    if(allPlanets[i] != this){
-			NetForceExertedByX += calcForceExertedBy(allPlanets[i]) * (allPlanets[i].xxPos - xxPos) / calcDistance(allPlanets[i]);
+			NetForceExertedByX += calcForceExertedByX(allPlanets[i]);
 		    }
 	    }
 	     return NetForceExertedByX;
@@ -43,7 +51,7 @@ public class Planet {
 		double NetForceExertedByY = 0;
 		for (int i = 0; i < allPlanets.length; i++) {
 			if(allPlanets[i] != this) {
-			    NetForceExertedByY += calcForceExertedBy(allPlanets[i]) * (allPlanets[i].yyPos - yyPos) / calcDistance(allPlanets[i]);
+			    NetForceExertedByY += calcForceExertedByY(allPlanets[i]);
 			}
 		}
 	     return NetForceExertedByY;
