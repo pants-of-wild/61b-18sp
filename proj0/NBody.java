@@ -1,5 +1,4 @@
 
-import java.util.Scanner;
 public class NBody{
     public static double readRadius(String file) {	
 		In obj = new In(file);
