@@ -24,12 +24,9 @@ public class NBody{
 		return allPlanets;
 	}
 	public static void main(String[] args) {
-		Scanner input = new Scanner(System.in);
-		String st = input.next();
-		String sdt = input.next();
-		double T = Double.parseDouble(st);
-		double dt = Double.parseDouble(sdt);
-		String filename = input.next();
+		double T = Double.parseDouble(args[0]);
+        double dt = Double.parseDouble(args[1]);
+        String filename = args[2];
 		double scale = readRadius(filename);
 		Planet [] allPlanets = readPlanets(filename);
 		StdDraw.setCanvasSize();
@@ -59,10 +56,10 @@ public class NBody{
 		    StdDraw.pause(10);
 		    t += dt;
 		}
-		StdOut.printf("%d\n", allPlanets.length);
-        StdOut.printf("%.2e\n", scale);
+		System.out.printf("%d\n", allPlanets.length);
+        System.out.printf("%.2e\n", scale);
         for (int i = 0; i < allPlanets.length; i++) {
-        StdOut.printf("%11.4e %11.4e %11.4e %11.4e %11.4e %12s\n",
+        System.out.printf("%11.4e %11.4e %11.4e %11.4e %11.4e %12s\n",
                   allPlanets[i].xxPos, allPlanets[i].yyPos, allPlanets[i].xxVel,
                   allPlanets[i].yyVel, allPlanets[i].mass, allPlanets[i].imgFileName);   
         }
