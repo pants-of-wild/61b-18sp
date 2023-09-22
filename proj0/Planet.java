@@ -23,7 +23,7 @@ public class Planet {
 		imgFileName = p.imgFileName;
 	}
 	public double calcDistance(Planet obj) {
-		return Math.sqrt((xxPos - obj.xxPos) * (xxPos - obj.xxPos) + (xxPos - obj.yyPos) * (yyPos - obj.yyPos));
+		return Math.sqrt((xxPos - obj.xxPos) * (xxPos - obj.xxPos) + (yyPos - obj.yyPos) * (yyPos - obj.yyPos));
 	}
 	public double calcForceExertedBy(Planet obj) {
 		double r = calcDistance(obj);
