@@ -6,10 +6,8 @@ public class ArrayDequeTest {
         ex.addFirst(6);
         ex.addLast(9);
         ex.addFirst(1);
-        ex.addFirst(7);
-        ex.addFirst(100);
-        ex.addLast(25);
-        //ex.addLast(26);
+        ex.removeFirst();
+        ex.removeLast();
         //ex.addLast(29);
         ex.printDeque();
     }
