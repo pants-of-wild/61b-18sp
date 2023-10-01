@@ -50,12 +50,11 @@ public class LinkedListDeque<T> {
         if(isEmpty()) {
             return null;
         }
-        T last = sentinel.prev.next.data;
+        T last = sentinel.prev.data;
         sentinel.prev.prev.next = sentinel;
         sentinel.prev = sentinel.prev.prev;
         size--;
         return last;
-
     }
     public boolean isEmpty() {
         return (size == 0);
