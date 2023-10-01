@@ -6,24 +6,19 @@ public class ArrayDeque <T> {
     public ArrayDeque () {
         size = 0;
         Arr = (T[]) new Object[8];
-        front = 4;
-        back = 5;
+        front = 5;
+        back = 4;
     }
     public void addFirst(T item) {
-        if (size != 0) {
-            front = (front + Arr.length - 1)% Arr.length;
-        }
+        front = (front + Arr.length - 1)% Arr.length;
         Arr[front] = item;
         size++;
         if (Arr.length == size) {
             arrExpand();
         }
-
     }
     public void addLast(T item) {
-        if (size != 0) {
-            back = (front + Arr.length + 1)% Arr.length;
-        }
+        back = (back + Arr.length + 1)% Arr.length;
        Arr[back] = item;
        size++;
        if (Arr.length == size) {
@@ -55,7 +50,7 @@ public class ArrayDeque <T> {
         System.arraycopy(Arr,0, temp, 0, Arr.length);
         Arr = temp;
     }
-    public void arrReduct (){
+    private void arrReduct (){
         T[] temp = (T[]) new Object[Arr.length / 2];
         System.arraycopy(Arr, 0, temp, 0, Arr.length);
         Arr = temp;
@@ -74,8 +69,7 @@ public class ArrayDeque <T> {
     }
     public void printDeque() {
         for (int i = 0; i < size; i++) {
-            System.out.print(Arr[(front + i) % Arr.length] + " ");
+            System.out.print(Arr[(front + i) % 8] + " ");
         }
     }
-
 }
