@@ -82,7 +82,7 @@ public class ArrayDeque <T> {
         if (index >= Arr.length) {
             return null;
         }
-        return Arr[(front + index + Arr.length + 1) % Arr.length];
+        return Arr[(front + index + Arr.length) % Arr.length];
     }
     public void printDeque() {
         for (int i = 0; i < size; i++) {
