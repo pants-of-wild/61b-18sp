@@ -32,6 +32,7 @@ public class NBody{
 		StdDraw.setXscale(-scale, scale);
 		StdDraw.setYscale(-scale, scale);
 		StdDraw.picture(0, 0, "./images/starfield.jpg");
+		StdAudio.play("audio/2001.mid");
 		for (int i = 0; i < allPlanets.length; i++) {
 			allPlanets[i].draw();
 		}
