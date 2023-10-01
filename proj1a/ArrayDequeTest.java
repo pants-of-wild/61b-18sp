@@ -10,6 +10,8 @@ public class ArrayDequeTest {
         ex.removeLast();
         //ex.addLast(29);
         ex.printDeque();
+        Object d3 = ex.get(2);
+        System.out.println(d3);
     }
 
     public static void main(String args[]) {

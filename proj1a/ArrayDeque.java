@@ -71,7 +71,6 @@ public class ArrayDeque <T> {
         Arr = temp;
         front = 0;
         back = size - 1;
-
     }
     public int size() {
         return size;
@@ -80,10 +79,10 @@ public class ArrayDeque <T> {
         return size == 0;
     }
     public T get(int index) {
-        if (index >= size) {
+        if (index >= Arr.length) {
             return null;
         }
-        return Arr[(front + index + Arr.length) % Arr.length];
+        return Arr[(front + index + Arr.length + 1) % Arr.length];
     }
     public void printDeque() {
         for (int i = 0; i < size; i++) {
