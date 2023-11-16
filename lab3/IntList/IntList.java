@@ -29,7 +29,7 @@ public class IntList {
      * A List with null rest, and first = 0.
      */
     public IntList() {
-    /* NOTE: public IntList () { }  would also work. */
+        /* NOTE: public IntList () { }  would also work. */
         this(0, null);
     }
 
@@ -82,13 +82,13 @@ public class IntList {
 
     public static IntList dcatenate(IntList A, IntList B) {
         //TODO:  fill in method
-        if (!(A == null) && !(B == null) ) {
+        if (!(A == null) && !(B == null)) {
             IntList ptrA = A;
             IntList ptrB = B;
             while (ptrA.rest != null) {
                 ptrA = ptrA.rest;
             }
-            while(ptrB != null) {
+            while (ptrB != null) {
                 ptrA.rest = new IntList(ptrB.first, ptrB.rest);
                 ptrA = ptrA.rest;
                 ptrB = ptrB.rest;
@@ -103,7 +103,7 @@ public class IntList {
      * * elements of B.  May NOT modify items of A.  Use 'new'.
      */
     public static IntList catenate(IntList A, IntList B) {
-        if(!(A == null) && !(B == null)) {
+        if (!(A == null) && !(B == null)) {
             IntList ptrA = A;
             IntList ptrB = B;
             IntList res = new IntList(ptrA.first, ptrA.rest);
@@ -124,8 +124,21 @@ public class IntList {
         return null;
     }
 
-
-
+    public static IntList reverse(IntList A) {
+        if (A == null) {
+            return null;
+        }
+        IntList cur = A;
+        IntList prev = null;
+        while (cur != null) {
+            IntList next = cur.rest;
+            cur.rest = prev;
+            prev = cur;
+            cur = next;
+        }
+        A = prev;
+        return prev;
+    }
 
 
 
