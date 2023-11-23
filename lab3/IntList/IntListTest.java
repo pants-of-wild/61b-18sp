@@ -73,7 +73,7 @@ public class IntListTest {
         IntList re = IntList.reverse(L); // reversed l, and l is changed
         assertEquals(K, re); // return a reversed IntList
         assertNotEquals(l, L); // verify that L is destoryed
-        
+
         assertEquals(null, IntList.reverse(null));
     }
 
