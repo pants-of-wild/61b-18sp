@@ -9,7 +9,7 @@ public class Palindrome {
         }
         return to;
     }
-    public static boolean isPalindrome(String word) { // add a recursive method
+    public  boolean isPalindrome(String word) { // add a recursive method
         if (word.length() == 0 || word.length() == 1) {
             return true;
         }
@@ -23,7 +23,7 @@ public class Palindrome {
         }
         return true;
     }
-    public static boolean isPalindrome(String word, CharacterComparator cc) {
+    public  boolean isPalindrome(String word, CharacterComparator cc) {
         if (word.length() == 1 || word.length() == 0) {
             return true;
         }
