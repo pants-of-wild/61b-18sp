@@ -1,7 +1,6 @@
-
 public class LinkedListDeque<T> implements Deque<T> {
-    private class Node{
-        private T data ;
+    private class Node {
+        private T data;
         private Node next;
         private Node prev;
         public Node(T da, Node p, Node n) {
@@ -52,7 +51,7 @@ public class LinkedListDeque<T> implements Deque<T> {
     }
     @Override
     public T removeLast() {
-        if(isEmpty()) {
+        if (isEmpty()) {
             return null;
         }
         T last = sentinel.prev.data;
@@ -88,7 +87,7 @@ public class LinkedListDeque<T> implements Deque<T> {
         }
         return getRecursiveHelper(sentinel.next, index);
     }
-    private T getRecursiveHelper(Node start,int index) {
+    private T getRecursiveHelper(Node start, int index) {
         if (index >= size) {
             return null;
         }
@@ -107,3 +106,4 @@ public class LinkedListDeque<T> implements Deque<T> {
         }
     }
 }
+

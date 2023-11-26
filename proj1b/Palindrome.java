@@ -14,7 +14,7 @@ public class Palindrome {
             return true;
         }
         int low = 0, high = word.length() - 1;
-        while(low < high) {
+        while (low < high) {
             if (word.charAt(low) != word.charAt(high)) {
                 return false;
             }
@@ -28,7 +28,7 @@ public class Palindrome {
             return true;
         }
         int low = 0, high = word.length() - 1;
-        while(low < high) {
+        while (low < high) {
             if (!cc.equalChars(word.charAt(low), word.charAt(high))) {
                 return false;
             }
